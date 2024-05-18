@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PANALANGIN</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: pink;
+        }
+
+        .container {
+            overflow: auto;
+            max-width: 600px;
+            max-height: 800px;
+            background-color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        img {
+            display: block;
+            max-width: 550px;
+            max-height: 550px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            font-size: 15px;
+            display: block;
+            margin: 10px auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            width: 80px;
+            background-color: pink;
+            border: none;
+            border-radius: 10px;
+        }
+        
+        #letter {
+            display: none;
+        }
+
+        #download-btn {
+            display: none;
+        }
+        
+        audio {
+            width: 550px;
+        }
+
+        p{
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <img src="1.jpeg" id="image">
+        <button onclick="handleButtonClick()">ENTER</button>
+        <p id="letter"></p>
+        <audio id="audio" controls style="display: none">
+            <source src="audio.mp3" type="audio/mp3">
+        </audio>
+        <button id="download-btn" onclick="downloadFile('sample.txt')" style="display: none">SAVE</button>
+    </div>
+    
+    <script>
+        function handleButtonClick() {
+            document.querySelector('button').style.display = 'none';
+            document.getElementById('image').src = '2.jpeg';
+            document.getElementById('letter').innerText = 'PANALANGIN';
+            document.getElementById('letter').style.display = 'block';
+            document.getElementById('audio').style.display = 'block';
+            document.getElementById('download-btn').style.display = 'block';
+        }
+
+        function downloadFile(filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = 'path/to/sample.txt'; // Replace with the actual path to your file
+            link.click();
+        }
+    </script>
+</body>
+
+</html>
