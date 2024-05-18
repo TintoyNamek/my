@@ -71,7 +71,7 @@
         <audio id="audio" controls style="display: none">
             <source src="audio.mp3" type="audio/mp3">
         </audio>
-        <button id="download-btn" onclick="downloadFile('sample.txt')" style="display: none">SAVE</button>
+        <button id="download-btn" onclick="downloadFile('bby.mp3')" style="display: none">SAVE</button>
     </div>
     
     <script>
@@ -84,7 +84,7 @@
             document.getElementById('download-btn').style.display = 'block';
         }
 
-        function downloadFile(filename) {
+        function downloadFile(panalangin) {
             const link = document.createElement('a');
             link.download = panalangin;
             link.href = 'bby.mp3'; // Replace with the actual path to your file
