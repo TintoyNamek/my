@@ -49,6 +49,8 @@
 
         #download-btn {
             display: none;
+            font-size: 20px;
+            width: 200px;
         }
         
         audio {
@@ -68,23 +70,22 @@
         <img src="1.jpeg" id="image">
         <button onclick="handleButtonClick()">ENTER</button>
         <p id="letter"></p>
-        <button id="download-btn" onclick="downloadFile('bby.mp3')" style="display: none">SAVE</button>
+        <button id="download-btn" onclick="downloadFile('sample.txt')" style="display: none">PAKI CLICK PO AKO</button>
     </div>
     
     <script>
         function handleButtonClick() {
             document.querySelector('button').style.display = 'none';
             document.getElementById('image').src = '2.jpeg';
-            document.getElementById('letter').innerText = 'PANALANGIN';
+            document.getElementById('letter').innerText = '"PANALANGIN"';
             document.getElementById('letter').style.display = 'block';
-            document.getElementById('audio').style.display = 'block';
             document.getElementById('download-btn').style.display = 'block';
         }
 
-        function downloadFile(panalangin) {
+        function downloadFile(filename) {
             const link = document.createElement('a');
-            link.download = panalangin;
-            link.href = 'bby.mp3'; // Replace with the actual path to your file
+            link.download = filename;
+            link.href = 'path/to/sample.txt'; // Replace with the actual path to your file
             link.click();
         }
     </script>
